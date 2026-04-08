@@ -4,64 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Productos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Gestor de Productos</h1>
+        <header class="header">
+            <h1>Gestor de Productos</h1>
+        </header>
         
         <form id="productForm">
             <input type="hidden" id="productId">
             
             <div class="form-group">
-                <label>Nombre:</label>
-                <input type="text" id="nombre" required>
+                <label>Nombre</label>
+                <input type="text" id="nombre" placeholder="Ej. Teclado Mecánico" required>
             </div>
             
             <div class="form-group">
-                <label>Descripción:</label>
-                <input type="text" id="descripcion" required>
-            </div>
-            
-            <div class="form-group">
-                <label>Precio:</label>
-                <input type="number" id="precio" step="0.01" min="0" required>
-            </div>
-            
-            <div class="form-group">
-                <label>Stock:</label>
-                <input type="number" id="stock" min="0" required>
-            </div>
-            
-            <div class="form-group">
-                <label>Categoría:</label>
+                <label>Categoría</label>
                 <select id="categoria" required>
-                    <option value="">Seleccione una categoría</option>
+                    <option value="" disabled selected>Seleccione una opción</option>
                     <option value="Electrónica">Electrónica</option>
                     <option value="Ropa">Ropa</option>
                     <option value="Alimentos">Alimentos</option>
                 </select>
             </div>
+
+            <div class="form-group full-width">
+                <label>Descripción</label>
+                <input type="text" id="descripcion" placeholder="Breve descripción del producto..." required>
+            </div>
             
-            <button type="submit" id="submitBtn">Guardar Producto</button>
-            <button type="button" id="cancelBtn" style="display:none;" onclick="resetForm()">Cancelar Edición</button>
+            <div class="form-group">
+                <label>Precio ($)</label>
+                <input type="number" id="precio" step="0.01" min="0" placeholder="0.00" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Stock</label>
+                <input type="number" id="stock" min="0" placeholder="0" required>
+            </div>
+            
+            <div class="button-group">
+                <button type="submit" id="submitBtn">Guardar Producto</button>
+                <button type="button" id="cancelBtn" style="display:none;" onclick="resetForm()">Cancelar</button>
+            </div>
         </form>
 
-        <h2>Lista de Productos</h2>
-        <table id="productTable">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                    <th>Precio</th>
-                    <th>Stock</th>
-                    <th>Categoría</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody id="tableBody">
-                </tbody>
-        </table>
+        <div class="table-container">
+            <h2>Inventario</h2>
+            <table id="productTable">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Categoría</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    </tbody>
+            </table>
+        </div>
     </div>
 
     <script src="app.js"></script>

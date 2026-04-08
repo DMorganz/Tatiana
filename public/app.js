@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:3000/api/productos';
+const apiUrl = '/api/productos';
 
 // Cargar y mostrar los productos al iniciar la página
 document.addEventListener('DOMContentLoaded', getProducts);

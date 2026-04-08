@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const Product = require('/Windows/System32/gestor-productos/models/Product');
+const Product = require('./models/Product');
 
 const app = express();
 
